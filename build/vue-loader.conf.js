@@ -19,7 +19,7 @@ module.exports = {
           // errorsAsWarnings: true,
           useCache: true,
         }
-      },
+      }
       // // *.vue文件直接写ts，使用的时候，注释掉上面的awesome-typescript-loader
       // {
       //   loader: 'ts-loader',
