@@ -1,36 +1,34 @@
 <template>
   <div>
     <ul class="container log-list">
-      <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
-        <card :text="(index + 1) + ' . ' + log"></card>
-      </li>
+      hello world
     </ul>
   </div>
 </template>
 
-<script>
-import { formatTime } from '@/utils/index'
-import card from '@/components/card'
+<script lang="ts">
+// import { formatTime } from '@/utils/index'
+// import card from '@/components/card'
 
-export default {
-  components: {
-    card
-  },
+// export default {
+//   components: {
+//     card
+//   },
 
-  data () {
-    return {
-      logs: []
-    }
-  },
+//   data () {
+//     return {
+//       logs: []
+//     }
+//   },
 
-  created () {
-    const logs = (wx.getStorageSync('logs') || [])
-    this.logs = logs.map(log => formatTime(new Date(log)))
-  }
-}
+//   created () {
+//     const logs = (wx.getStorageSync('logs') || [])
+//     this.logs = logs.map(log => formatTime(new Date(log)))
+//   }
+// }
 </script>
 
-<style>
+<style scoped>
 .log-list {
   display: flex;
   flex-direction: column;

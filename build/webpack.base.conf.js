@@ -16,16 +16,16 @@ function resolve (dir) {
 
 function getEntry (rootSrc) {
   var map = {};
-  glob.sync(rootSrc + '/pages/**/main.js')
+  glob.sync(rootSrc + '/pages/**/main.ts')
   .forEach(file => {
-    var key = relative(rootSrc, file).replace('.js', '');
+    var key = relative(rootSrc, file).replace('.ts', '');
     map[key] = file;
   })
    return map;
 }
 
-const appEntry = { app: resolve('./src/main.js') }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+const appEntry = { app: resolve('./src/main.ts') }
+const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.ts')
 const entry = Object.assign({}, appEntry, pagesEntry)
 
 let baseWebpackConfig = {
@@ -43,7 +43,7 @@ let baseWebpackConfig = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.ts'],
     alias: {
       'vue': 'mpvue',
       '@': resolve('src')
@@ -54,6 +54,27 @@ let baseWebpackConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        // include: [resolve('src'), resolve('test')],
+        exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'mpvue-loader',
+            options: {
+              checkMPEntry: true
+            }
+          },
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              // errorsAsWarnings: true,
+              useCache: true,
+            }
+          }
+        ],
+      },
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',

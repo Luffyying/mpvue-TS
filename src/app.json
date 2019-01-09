@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/home/main",
+    "pages/logs/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "啦啦啦",
+    "navigationBarTitleText": "啦啦fgh啦",
     "navigationBarTextStyle": "black"
   }
 }
