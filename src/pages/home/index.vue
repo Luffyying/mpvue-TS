@@ -1,17 +1,18 @@
 <template>
-  <!-- <div class="container" @click="clickHandle('test click', $event)">
-    <div class="userinfo" @click="bindViewTap">
+  <div class="container" @click="clickHandle('test click', $event)">
+    <!-- <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
         <card :text="userInfo.nickName"></card>
       </div>
+    </div> -->
+    <div class="tst">
+      <IndexSwiper></IndexSwiper>
+      haha
+      hello typescirpt mpvue
     </div>
-  </div> -->
-  <div class="tst">
-    <IndexSwiper></IndexSwiper>
-    haha
-     hello typescirpt mpvue
   </div>
+  
 </template>
 
 <script lang="ts" src="./index.ts">

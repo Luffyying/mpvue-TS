@@ -12,13 +12,15 @@ declare module "vue/types/vue" {
   mpType: 'app', // mpvue特定
 }as any)
 class App extends Vue {
-  @State COMMON_MODULE:object;
-  @Action get_salt:()=>void;
-  @Action get_config:()=>void;
+  @State HOME_MODULE:object;
+  // @Action get_salt:()=>void;
+  // @Action get_config:()=>void;
   // app hook
   async onLaunch() {
-    await this.get_salt();
-    await this.get_config();
+    console.log('onlaunch')
+    console.log(this.$store.state)
+    // await this.get_salt();
+    // await this.get_config();
   }
 
 }

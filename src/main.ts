@@ -41,6 +41,6 @@ if (isApp) {
   // MyApp = require('./index.vue')
 }
 
-
+console.log('main.ts here !!')
 const app:Vue = new Vue(MyApp)
 app.$mount()
