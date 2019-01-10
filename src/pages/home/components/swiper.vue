@@ -1,11 +1,11 @@
 <template>
-    <div class="like">
+  <div class="like">
     这里是home页面的组件swiper.vue
     {{mytest}}
-    </div>
+  </div>
 </template>
 <script lang="ts">
-   
+
 </script>
 
 <style lang="scss">

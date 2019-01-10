@@ -44,6 +44,7 @@ let baseWebpackConfig = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json','.ts'],
+    //注意：ts不认识alias这种语法，需要在此配置
     alias: {
       'vue': 'mpvue',
       '@': resolve('src')
@@ -56,7 +57,6 @@ let baseWebpackConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        // include: [resolve('src'), resolve('test')],
         exclude: /node_modules/,
         use: [
           'babel-loader',
