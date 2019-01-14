@@ -24,7 +24,8 @@
     "vue": "^2.5.16",
     "vue-property-decorator": "^7.0.0",
     "vuex": "^3.0.1",
-    "vuex-class": "^0.3.1"
+    "vuex-class": "^0.3.1",
+    "webpack-mpvue-vendor-plugin": "0.0.1"
   },
   "devDependencies": {
     "@minapp/wx": "^2.2.1",
@@ -93,7 +94,7 @@
     "webpack-mpvue-asset-plugin": "^0.1.1"
   },
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 8.9.0",
     "npm": ">= 3.0.0"
   },
   "browserslist": [

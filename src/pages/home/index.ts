@@ -20,6 +20,11 @@ class Index extends Vue{
     console.log('调用了mutation')
     console.log(this.$store.state.HOME_MODULE.test)
   }
+  //页面加载后的函数
+  async onLaunch(){
+
+
+  }
   //页面滚动事件
   onPageScroll(){
     console.log('scroll')

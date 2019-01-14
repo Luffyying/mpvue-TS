@@ -1,5 +1,6 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { State , Action } from 'vuex-class'
+import { formatTime } from '@/utils/index'
 
 declare module "vue/types/vue" {
   interface Vue {
@@ -13,14 +14,35 @@ declare module "vue/types/vue" {
 }as any)
 class App extends Vue {
   @State HOME_MODULE:object;
+  logs:any = []
   // @Action get_salt:()=>void;
   // @Action get_config:()=>void;
   // app hook
   async onLaunch() {
-    console.log('onlaunch')
-    console.log(this.$store.state)
+    //todo 展示本地存储能力
+    const logs = (wx.getStorageSync('logs') || [])
+    this.logs = logs.map(log => formatTime(new Date(log)))
+    console.log('here is logs')
+    console.log(this.logs)
+
+    //todo 登录
+    wx.login({
+      success:res =>{
+        console.log('return data')
+        console.log(res)
+        // 发送 res.code 到后台换取必要信息
+      }
+    })
+
+
+    //todo 获取用户信息
+    wx.getSetting({
+      success:res =>{
+        console.log('the user info:')
+        console.log(res)
+      }
+    })
     // await this.get_salt();
-    // await this.get_config();
   }
 
 }
